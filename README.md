@@ -1,5 +1,16 @@
-# Vue 3 + TypeScript + Vite
+#Cluttered Tools
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+可以叫杂七杂八的工具，一个用于练习vue3 和 typescript 的项目，会放一些突发奇想时想写的功能。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+##技术栈
+
+* 脚手架: Vite
+* 框架: Vue 3
+* 语言: TypeScript
+* UI 库: shadcn/ui
+* CSS 方案: Tailwind CSS
+* HTTP 请求: Axios
+
+##开发环境
+
+* node: 20.13.1

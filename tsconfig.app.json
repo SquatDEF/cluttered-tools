@@ -1,15 +1,27 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
+
   "compilerOptions": {
+    // 指定增量编译信息的存储位置（提升后续编译速度）
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    /* ---------- Linting 严格类型检查规则 ---------- */
+    "strict": true, // 启用所有严格类型检查
+    "noUnusedLocals": true, // 禁止未使用的局部变量
+    "noUnusedParameters": true, // 禁止未使用的函数参数
+    "erasableSyntaxOnly": true, // 仅允许擦除语法（确保类型不影响运行时）
+    "noFallthroughCasesInSwitch": true, // 禁止 switch 语句 case 穿透
+    "noUncheckedSideEffectImports": true, // 禁止可能带有副作用的未检查导入
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@of/*": ["./src/projects/over-field/*"],
+    },
+    "types": ["vite/client", "vue-router"],
+    "moduleResolution": "node"
   },
+
+  // 包含需要编译的前端文件（Vue SFC + TypeScript）
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

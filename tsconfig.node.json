@@ -1,25 +1,30 @@
 {
   "compilerOptions": {
+    // 增量编译信息存储位置（与前端配置分离）
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    /* ---------- 编译目标 ---------- */
+    "target": "ES2022",       // 编译输出目标 ES 版本
+    "lib": ["ES2023"],        // 使用的标准库类型（仅 ES，不包含 DOM）
+    "module": "ESNext",       // 使用 ESM 模块规范（与 Vite 的现代构建匹配）
+    "skipLibCheck": true,     // 跳过声明文件类型检查（提升速度）
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    /* ---------- Bundler 模式 ---------- */
+    "moduleResolution": "bundler",          // 适用于现代打包器的模块解析策略
+    "allowImportingTsExtensions": true,     // 允许直接导入 .ts 文件
+    "verbatimModuleSyntax": true,           // 严格区分类型导入和值导入
+    "moduleDetection": "force",             // 强制所有文件视为模块
+    "noEmit": true,                         // 不输出编译结果（仅类型检查）
+
+    /* ---------- Linting 严格类型检查规则 ---------- */
+    "strict": true,                      // 与前端配置保持一致的严格规则
+    "noUnusedLocals": true,              
+    "noUnusedParameters": true,          
+    "erasableSyntaxOnly": true,          
+    "noFallthroughCasesInSwitch": true,  
+    "noUncheckedSideEffectImports": true 
   },
+
+  // 仅包含 Node.js 环境脚本（如 Vite 配置文件）
   "include": ["vite.config.ts"]
 }
